@@ -32,6 +32,7 @@ public class BeanConfig {
         config.addAllowedMethod("*");
 
         source.registerCorsConfiguration("/admin/categories", config);
+        source.registerCorsConfiguration("/admin/categories/**", config);
         return new CorsFilter(source);
     }
 
