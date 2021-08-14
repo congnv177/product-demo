@@ -53,4 +53,12 @@ public class CategoryController {
     public CategoryResponse getById(@PathVariable("id") int id) {
         return CATEGORIES.get(id - 1);
     }
+
+    @PutMapping(value = "/{id}")
+    public CategoryResponse update(@PathVariable("id") int id, @RequestBody CategoryRequest req) {
+        val category = CATEGORIES.get(id - 1);
+        category.setDescription(req.getDescription());
+        category.setName(req.getName());
+        return category;
+    }
 }
