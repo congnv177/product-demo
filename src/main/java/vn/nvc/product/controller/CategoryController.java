@@ -48,4 +48,9 @@ public class CategoryController {
         CATEGORIES.add(newCategory);
         return newCategory;
     }
+
+    @GetMapping(value = "/{id}")
+    public CategoryResponse getById(@PathVariable("id") int id) {
+        return CATEGORIES.get(id - 1);
+    }
 }
