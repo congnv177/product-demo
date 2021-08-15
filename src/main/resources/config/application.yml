@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  shutdown-wait-time: 30000
+
+spring:
+  security:
+    jwt:
+      secret-token: wrmUvystZIbKOEL3ikC3rbgkeO0qxYft
+      token-prefix: Bearer
+      header-name: Authorization
+      expiration-time: 864000000
+
+application:
+  # CORS is disabled by default on microservices, as you should access them through a gateway.
+  # If you want to enable it, please uncomment the configuration below.
+  cors:
+    allowed-origins: "*"
+    allowed-methods: "*"
+    allowed-headers: "*"
+    exposed-headers: "Authorization,Link,X-Total-Count"
+    allow-credentials: true
+    max-age: 1800
